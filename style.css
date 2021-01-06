@@ -60,6 +60,7 @@ form input:focus {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  margin-bottom: 1rem;
   background: white;
   color: black;
   border-radius: 10px;
