@@ -5,9 +5,8 @@ const todoList = document.querySelector('ul');
 // Methods
 const addTodo = (e) => {
     console.log(e);
-    // if key is enter
-    if(e.defaultPrevented) {
-        return;
+    if(e.target.value === '') {
+        return
     }
     if(e.key === 'Enter') {
         // create todo
@@ -30,6 +29,7 @@ const addTodo = (e) => {
         deleteButton.appendChild(deleteIcon);
         // add todo to document
         todoList.insertBefore(todo, todoList.firstChild);
+        todo.classList.add("todo-fade");
         // empty input field
         todoInput.value = '';
         e.preventDefault();
@@ -40,8 +40,9 @@ const deleteTodo = (e) => {
     const clickedButton = e.target.parentNode;
     console.log(clickedButton);
     const toDelete = clickedButton.parentNode; // toDelete = <div class="todo"></div>
+    toDelete.addEventListener("animationend", (e) => {todoList.removeChild(toDelete)}, false);
+    toDelete.classList.add('todo-fadeOut');
     console.log(toDelete);
-    todoList.removeChild(toDelete); 
 };
 // Event Listeners 
 todoInput.addEventListener('keydown', addTodo, false);
