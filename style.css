@@ -26,6 +26,11 @@ button {
 
 i {
   color: grey;
+  transition: color 0.2s ease-in-out;
+}
+
+i:hover {
+  color: #626262;
 }
 
 .container {
@@ -86,9 +91,8 @@ form input:focus {
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
   opacity: 0;
-  -webkit-animation: 1s fadeIn forwards;
-  animation: 1s fadeIn forwards;
-  transition: opacity 1s;
+  -webkit-animation: 0.5s fadeIn forwards;
+  animation: 0.5s fadeIn forwards;
 }
 
 @keyframes fadeIn {
@@ -97,7 +101,8 @@ form input:focus {
 }
 
 .todo-fadeOut {
-  animation: 0.5s fadeOut forwards;
+  -webkit-animation: 0.25s fadeOut forwards;
+  animation: 0.25s fadeOut forwards;
 }
 
 @keyframes fadeOut {
